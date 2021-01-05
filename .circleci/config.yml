@@ -61,7 +61,7 @@ jobs:
 
 
   test-core:
-    resource_class: xlarge
+    # resource_class: xlarge
     <<: *plain-go113
 
     steps:
@@ -71,7 +71,7 @@ jobs:
           command: go test -v -race `go list ./... | grep -v /contrib/`
 
   test-contrib:
-    resource_class: xlarge
+    # resource_class: xlarge
     working_directory: /home/circleci/dd-trace-go.v1
     docker:
       - image: circleci/golang:1.13
